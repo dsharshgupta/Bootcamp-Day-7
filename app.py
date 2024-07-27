@@ -80,8 +80,8 @@ def main():
         data = [[ID,UserReputation,ReplyCount,recipe_name,UserID,ThumbsUpCount,ThumbsDownCount,BestScore,year,month,
                 dayofweek,hour,review_length,review]]
         data_df = pd.DataFrame(data,columns=columns)
-        preprocessor = joblib.load("preprocessor\preprocessor.joblib")
-        model = joblib.load("models\model.joblib")
+        preprocessor = joblib.load("preprocessor/preprocessor.joblib")
+        model = joblib.load("models/model.joblib")
         x_test_transform = preprocessor.transform(data_df)
         pred = model.predict(x_test_transform)
         st.markdown(f'<h1> Prediction for the data is : {pred} </h1>')
