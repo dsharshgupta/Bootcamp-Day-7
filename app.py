@@ -84,6 +84,6 @@ def main():
         model = joblib.load("models/model.joblib")
         x_test_transform = preprocessor.transform(data_df)
         pred = model.predict(x_test_transform)
-        st.markdown(f'<h1> Prediction for the data is : {pred} </h1>')
+        st.markdown(f'<h1 style="font-size:48px; color:green">Predicted Rating of Recipe is: {prediction}</h1>', unsafe_allow_html=True)
 if __name__ == "__main__":
     main()
